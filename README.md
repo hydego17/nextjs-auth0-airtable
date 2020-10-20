@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is an authenticated Todo app that uses Next.js, Airtable, Tailwind CSS, and Auth0.
 
-## Simple todo app
-
-using Nextjs, Auth0 and Airtable
+![Screenshot of Todo App](./public/screenshot.png)
