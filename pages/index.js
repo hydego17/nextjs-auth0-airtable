@@ -32,6 +32,11 @@ export default function Home({ initialTodos, user }) {
             </ul>
           </>
         )}
+        {!user && (
+          <p className=" rounded py-4 px-4 bg-gray-200 my-4 text-lg text-gray-600 font-medium">
+            Please login to save your TODOs :)
+          </p>
+        )}
       </main>
     </div>
   )
