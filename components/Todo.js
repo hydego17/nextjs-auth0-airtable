@@ -24,7 +24,7 @@ export default function Todo({ todo }) {
           name="completed"
           id="completed"
           checked={todo.fields.completed}
-          className="mr-4 h-4 w-4"
+          className="mr-4 h-4 w-4 cursor-pointer "
           onChange={handleToggleCompleted}
         />
 

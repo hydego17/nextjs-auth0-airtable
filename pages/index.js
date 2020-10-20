@@ -4,8 +4,9 @@ import { table, minifyRecords } from "./api/utils/Airtable"
 import Head from "next/head"
 import Navbar from "../components/Navbar"
 import Todo from "../components/Todo"
+import auth0 from "./api/utils/auth0"
 
-export default function Home({ initialTodos }) {
+export default function Home({ initialTodos, user }) {
   const { todos, setTodos } = useContext(TodosContext)
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function Home({ initialTodos }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
+      <Navbar user={user} />
       <main>
         <h1>Todo App</h1>
         <ul>
@@ -32,11 +33,14 @@ export default function Home({ initialTodos }) {
 
 // Grab todos and pass as props to Home component
 export async function getServerSideProps(context) {
+  const session = await auth0.getSession(context.req)
+
   try {
     const todos = await table.select({}).firstPage()
     return {
       props: {
         initialTodos: minifyRecords(todos),
+        user: session?.user || null,
       },
     }
   } catch (err) {
