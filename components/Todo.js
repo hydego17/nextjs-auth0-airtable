@@ -18,7 +18,7 @@ export default function Todo({ todo }) {
 
   return (
     <div>
-      <li className="flex bg-white items-center border rounded my-2 py-4 px-4">
+      <li className="flex bg-white items-center border rounded my-2 py-3 px-4">
         <input
           type="checkbox"
           name="completed"
@@ -39,7 +39,7 @@ export default function Todo({ todo }) {
 
         <button
           type="button"
-          className="text-sm bg-gray-200 hover:bg-red-600 hover:text-white text-gray-800 font-bold py-2 px-3 rounded transition duration-200 ease"
+          className="text-sm bg-gray-200 hover:bg-red-600 hover:text-white text-gray-800 font-bold py-2 px-3 rounded transition duration-200 ease focus:outline-none"
           onClick={() => deleteTodo(todo.id)}
         >
           Delete
