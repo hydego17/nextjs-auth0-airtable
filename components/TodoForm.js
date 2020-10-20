@@ -11,6 +11,7 @@ export default function TodoForm() {
     addTodo(todo)
     setTodo("")
   }
+
   return (
     <form className="form my-6" onSubmit={handleSubmit}>
       <div className="flex flex-col text-sm mb-2">

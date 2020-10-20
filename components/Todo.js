@@ -20,12 +20,11 @@ export default function Todo({ todo }) {
     <div>
       <li className="flex bg-white items-center border rounded my-2 py-3 px-4">
         <input
-          type="checkbox"
           name="completed"
-          id="completed"
+          type="checkbox"
           checked={todo.fields.completed}
-          className="mr-4 h-4 w-4 cursor-pointer "
           onChange={handleToggleCompleted}
+          className="mr-4 h-4 w-4 cursor-pointer form-checkbox"
         />
 
         <p
